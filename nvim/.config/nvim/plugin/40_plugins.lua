@@ -12,10 +12,6 @@ local now_if_args = _G.Config.now_if_args
 
 -- Tree-sitter ================================================================
 
--- Tree-sitter is a tool for fast incremental parsing. It converts text into
--- a hierarchical structure (called tree) that can be used to implement advanced
--- and/or more precise actions: syntax highlighting, textobjects, indent, etc.
---
 -- Tree-sitter support is built into Neovim (see `:h treesitter`). However, it
 -- requires two extra pieces that don't come with Neovim directly:
 -- - Language parsers: programs that convert text into trees. Some are built-in
@@ -93,9 +89,9 @@ now_if_args(function()
   -- the rules provided by 'nvim-lspconfig'.
   -- Use `:h vim.lsp.config()` or 'after/lsp/' directory to configure servers.
   -- Uncomment and tweak the following `vim.lsp.enable()` call to enable servers.
-  -- vim.lsp.enable({
-  --   -- For example, if `lua-language-server` is installed, use `'lua_ls'` entry
-  -- })
+  vim.lsp.enable({
+    'expert'
+  })
 end)
 
 -- Formatting =================================================================
@@ -166,11 +162,28 @@ MiniDeps.now(function()
   vim.cmd('color matteblack')
 end)
 
--- Mine ======================================================================
+-- Custom ======================================================================
 now_if_args(function()
   add('renews/hexcheck.nvim')
 end)
 
+later(function()
+  add('axieax/urlview.nvim')
+  require('urlview').setup({})
+end)
+
+-- Flash - Jump around text
+later(function()
+  add('folke/flash.nvim')
+  require("flash").setup({})
+  vim.keymap.set({ "n", "x", "o" }, "s", function() require("flash").jump() end, { desc = "Flash" })
+  vim.keymap.set({ "n", "x", "o" }, "S", function() require("flash").treesitter() end, { desc = "Flash Treesitter" })
+  vim.keymap.set("o", "r", function() require("flash").remote() end, { desc = "Remote Flash" })
+  vim.keymap.set({ "o", "x" }, "R", function() require("flash").treesitter_search() end, { desc = "Treesitter Search" })
+  vim.keymap.set("c", "<C-s>", function() require("flash").toggle() end, { desc = "Toggle Flash Search" })
+end)
+
+-- Line blame
 now_if_args(function()
   add('f-person/git-blame.nvim')
   require('gitblame').setup({
@@ -181,9 +194,9 @@ now_if_args(function()
   })
 end)
 
--- AI ========================================================================
-add('johnseth97/codex.nvim')
+-- Codex
 later(function()
+  add('johnseth97/codex.nvim')
   require('codex').setup({
     keymaps = {
       toggle = nil,        -- Disable the default internal toggle keymap to avoid conflicts
@@ -196,3 +209,4 @@ later(function()
     autoinstall = true,    -- Automatically install the Codex CLI if missing
   })
 end)
+

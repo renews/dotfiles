@@ -27,13 +27,6 @@ nmap(']p', '<Cmd>exe "put "  . v:register<CR>', 'Paste Below')
 
 -- Leader mappings ============================================================
 
--- Neovim has the concept of a Leader key (see `:h <Leader>`). It is a configurable
--- key that is primarily used for "workflow" mappings (opposed to text editing).
--- Like "open file explorer", "create scratch buffer", "pick from buffers".
---
--- In 'plugin/10_options.lua' <Leader> is set to <Space>, i.e. press <Space>
--- whenever there is a suggestion to press <Leader>.
---
 -- This config uses a "two key Leader mappings" approach: first key describes
 -- semantic group, second key executes an action. Both keys are usually chosen
 -- to create some kind of mnemonic.
@@ -247,6 +240,8 @@ nmap_leader('vl', '<Cmd>lua MiniVisits.add_label()<CR>',          'Add label')
 nmap_leader('vL', '<Cmd>lua MiniVisits.remove_label()<CR>',       'Remove label')
 
 -- Plugins =========================================================================
-nmap_leader('CC', function() require("codex").toggle() end, 	  'Toggle Codex')
-
+nmap_leader('CC', function() require("codex").toggle() end,       'Toggle Codex')
+nmap_leader('bu', "<Cmd>UrlView<CR>",  "View buffer URLs" )
+-- Custom Stuff ====================================================================
+-- nmap('<C-q>', function() <Cmd>lua MiniBufremove.delete()<CR> end, 'Delete Buffer')
 
