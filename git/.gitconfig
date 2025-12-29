@@ -1,0 +1,7 @@
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master
+[user]
+	name = Rene Schneider
+	email = 53726+renews@users.noreply.github.com
