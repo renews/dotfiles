@@ -1,0 +1,39 @@
+# OS generated files #
+######################
+**/.DS_Store
+**/._.DS_Store
+.DS_ Store
+.DocumentRevisions-V100
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+._*
+.fseventsd
+.un~
+Desktop.ini
+Thumbs.db
+ehthumbs.db
+
+# Compiled source
+*.class
+*.com
+*.dll
+*.exe
+*.o
+*.pyc
+*.so
+
+# Editing tools and IDEs
+.env.local
+.env
+.idea
+.vscode
+
+# Logs and databases
+*.log
+
+# Custom fish env files
+.fish.env
+.fish.out
+.envrc

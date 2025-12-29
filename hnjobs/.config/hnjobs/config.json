@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "cache": {
+    "ttl_secs": 86400
+  },
+  "scoring": {
+    "rules": [
+      {"text_found": "(?i)sre", "score": 1, "tags_why": ["career"]},
+      {"text_found": "(?i)reliability", "score": 1, "tags_why": ["career"]},
+      {"text_found": "(?i)resiliency", "score": 1, "tags_why": ["career"]},
+      {"text_found": "(?i)principal", "score": 1, "tags_why": ["level"]},
+      {"text_found": "(?i)staff\\b", "score": 1, "tags_why": ["level"]},
+      {"text_found": "(?i)aws", "score": 1, "tags_why": ["tech"]},
+      {"text_found": "(?i)\\brust\\b", "score": 1, "tags_why": ["tech", "memecred"], "style": {"Fg": "deeppink"}},
+      {"text_found": "(?i)golang", "score": 1, "tags_why": ["tech"]},
+      {"text_found": "(?i)\\bgo\\b", "score": 1, "tags_why": ["tech"]},
+      {"text_found": "(?i)open.?source", "score": 2, "tags_why": ["values"]},
+      {"text_found": "(?i)education", "score": 2, "tags_why": ["values"]},
+      {"text_found": "(?i)\\bheal", "score": 2, "tags_why": ["values"]},
+      {"text_missing": "(?i)remote", "score": -100, "tags_why_not": ["onsite", "fsckbezos"]}
+    ]
+  },
+  "display": {
+    "theme": "default",
+    "score_threshold": 1
+  }
+}

@@ -1,0 +1,10 @@
+[language-server.expert]
+command = "/home/renews/lsp-binaries/expert_linux_amd64"
+
+[[language]]
+name = "elixir"
+language-servers = ["expert"]
+
+[[language]]
+name = "heex"
+language-servers = ["expert"]
