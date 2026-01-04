@@ -77,6 +77,7 @@ alias trace trip # https://trippy.rs/guides/usage/
 alias grep ug # https://github.com/Genivia/ugrep
 alias "ps\ aux" procs
 alias docker podman
+alias myip "curl checkip.dyndns.org && curl ifconfig.me"
 
 ################
 # Fianances
