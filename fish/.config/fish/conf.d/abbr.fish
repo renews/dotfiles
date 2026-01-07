@@ -49,7 +49,7 @@ alias bb better-branch
 alias cat bat
 alias dig doggo # command-line DNS client
 alias l "eza -la"
-alias ld lazydocker
+alias ldock lazydocker
 alias lg lazygit
 alias lssh lazyssh
 alias pipx "uv tool"
