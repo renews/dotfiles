@@ -74,7 +74,6 @@ alias du duf # https://github.com/muesli/duf
 alias apis posting # https://github.com/darrenburns/posting
 alias prs "gh dash" # https://www.gh-dash.dev/
 alias trace trip # https://trippy.rs/guides/usage/
-alias grep ug # https://github.com/Genivia/ugrep
 alias "ps\ aux" procs
 alias docker podman
 alias myip "curl checkip.dyndns.org && curl ifconfig.me"
@@ -128,7 +127,6 @@ alias ux 'ug -U --hexdump' # binary pattern search (uses .ugrep config)
 
 alias ugit 'ug -R --ignore-files' # works like git-grep & define your preferences in .ugrep config
 
-alias grep 'ug -G' # search with basic regular expressions (BRE) like grep
 alias egrep 'ug -E' # search with extended regular expressions (ERE) like egrep
 alias fgrep 'ug -F' # find string(s) like fgrep
 alias zgrep 'ug -zG' # search compressed files and archives with BRE
