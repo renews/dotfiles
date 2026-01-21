@@ -1,6 +1,11 @@
 function compress_audio --description 'Compress audio recursively (wav, ogg, mp3, wmv) into OGG'
   set -l out_dir_name "compressed"
   set -l out_ext "ogg"
+  set -l vorbis_quality 2
+
+  if set -q COMPRESS_AUDIO_QUALITY
+    set vorbis_quality $COMPRESS_AUDIO_QUALITY
+  end
 
   if test (count $argv) -eq 0
     set in_dir (pwd)
@@ -48,7 +53,7 @@ function compress_audio --description 'Compress audio recursively (wav, ogg, mp3
       echo "[$count] ENCODE $rel, BASE $base"
       command ffmpeg -nostdin -y -loglevel error \
         -i "$f" -map 0:a:0? -vn \
-        -c:a libvorbis -q:a 4 \
+        -c:a libvorbis -q:a $vorbis_quality \
         "$out_path"
 
       if test $status -ne 0
