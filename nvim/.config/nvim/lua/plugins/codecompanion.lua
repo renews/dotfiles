@@ -1,0 +1,43 @@
+return {}
+-- return {
+--   {
+--     "olimorris/codecompanion.nvim",
+--     dependencies = {
+--       "ravitemer/mcphub.nvim",
+--       "nvim-lua/plenary.nvim",
+--     },
+--     opts = {
+--       strategies = {
+--         chat = {
+--           name = "copilot",
+--           model = "gpt-4.1",
+--         },
+--         inline = {
+--           adapter = "anthropic",
+--         },
+--       },
+--       opts = {
+--         log_level = "DEBUG",
+--       },
+--       acp = {
+--         gemini_cli = function()
+--           return require("codecompanion.adapters").extend("gemini_cli", {
+--             env = {
+--               api_key = "cmd:op read op://personal/Gemini/credential --no-newline",
+--             },
+--           })
+--         end,
+--       },
+--       extensions = {
+--         mcphub = {
+--           callback = "mcphub.extensions.codecompanion",
+--           opts = {
+--             make_vars = true,
+--             make_slash_commands = true,
+--             show_result_in_chat = true,
+--           },
+--         },
+--       },
+--     },
+--   },
+-- }
